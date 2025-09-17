@@ -1,2 +1,2 @@
-﻿using system;
-
+﻿using System;
+Console.WriteLine("Hola mundo");

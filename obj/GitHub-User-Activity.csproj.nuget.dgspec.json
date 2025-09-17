@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj": {}
+    "c:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj": {
+    "c:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj",
+        "projectUniqueName": "c:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj",
         "projectName": "GitHub-User-Activity",
-        "projectPath": "C:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj",
+        "projectPath": "c:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\GitHub-User-Activity.csproj",
         "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\obj\\",
+        "outputPath": "c:\\Users\\jerem\\OneDrive\\Documents\\C# PROJECTS\\GitHub-User-Activity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
