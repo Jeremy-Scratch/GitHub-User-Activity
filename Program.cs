@@ -1,22 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
-using System.Net.Http.Headers;
+﻿using System;
 
 Console.WriteLine("Enter a GitHub user name...");
 string? user = Console.ReadLine();
-using HttpClient client = new();
-
-string token = ""; //DONT COMMINT WITH THIS TOKEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                 
-//HEADERS 
-client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("chosenknight", token);
-client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("GitHubUserActivityProject", "1.0"));//MANDATORY FOR GITHUB
-//GET
-var response = await client.GetAsync($"https://api.github.com/users/{user}/events");
-response.EnsureSuccessStatusCode();
-string data = await response.Content.ReadAsStringAsync();
-List<Events>? events = JsonSerializer.Deserialize<List<Events>>(data);
-
+EventService service = new();
+List<Events> events =  await service.Getter(user);
 Console.WriteLine($"GitHub events from the user: {user}\n");
 foreach (var ev in events!)
 {
@@ -24,10 +11,10 @@ foreach (var ev in events!)
     string message;
     switch (action)
     {
-        case "PushEvent": message = $"Did {ev.payload!.Size} Commit/s in {ev.Repo!.RepoName}"; break;
-        case "CreateEvent": message = $"Create a new {ev.payload!.RefType} in {ev.Repo!.RepoName}"; break;
+        case "PushEvent": message = $"Pushed {ev.Payload!.Size} Commit/s \"{ev.Payload.Commits.FirstOrDefault()?.Message}\" in {ev.Repo!.RepoName}"; break;
+        case "CreateEvent": message = $"Created a new {ev.Payload!.RefType} in {ev.Repo!.RepoName}"; break;
         case "WatchEvent": message = $"Starred {ev.Repo!.RepoName}"; break;
-        default: message = $"{ev.EventType} {ev.payload!.Action} repository: {ev.Repo!.RepoName} {ev.payload.Size} "; break;
+        default: message = $"{ev.EventType} {ev.Payload!.Action} repository: {ev.Repo!.RepoName} {ev.Payload.Size}"; break;
     }
     Console.WriteLine(message);
 }
