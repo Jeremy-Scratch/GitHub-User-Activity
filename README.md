@@ -34,7 +34,6 @@ PROJECT LINK     https://roadmap.sh/projects/github-user-activity
     ```bash
     dotnet restore
 
-3. Add the GitHub personal access token(PAT) at Ln 6, Col 17
 ## Usage
 
 1. Build the project:
